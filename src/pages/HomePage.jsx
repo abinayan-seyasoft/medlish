@@ -15,11 +15,30 @@ import pic from "../assets/hero section image.png";
  * Medlish Communications — Home Page
  * Primary: #110069 (deep indigo)
  * Accent: #C9A227 (editorial gold)
- * Type: DM Serif Display (headlines) + DM Sans (body/UI)
+ * Type: DM Sans (headings) + Mulish (body/UI)
  *
  * Note: font import + Navbar + Footer are provided by ../layouts/Layout,
  * which wraps this page via the router — no need to duplicate them here.
  */
+
+const BIG_IDEA_FACTORS = [
+  {
+    title: "Deep Domain Expertise",
+    body: "Decades of pioneering pharmaceutical medicine practice, clinical research experience, rigorous translational research, regulatory understanding, and thought leadership in medical affairs — the kind of expertise that lets us grasp your science instantly and communicate it with precision.",
+  },
+  {
+    title: "In-Depth Understanding of the Problem Within Its Context",
+    body: "We don't treat data as mere numbers. We understand the environment, the audience, the constraints, and the strategic intent behind your message, ensuring your communication lands exactly where it needs to.",
+  },
+  {
+    title: 'Willingness to Challenge "Best Practice" When Evidence Demands It',
+    body: "Healthcare evolves. Evidence shifts. We question outdated norms responsibly when the science points in a better direction, always with rigor and respect for the truth.",
+  },
+  {
+    title: "Commitment to Scientific Ethics and Principles",
+    body: "Integrity is non-negotiable. Every narrative we craft is grounded in ethical communication, accurate interpretation, and unwavering respect for scientific principles. We never hesitate to decline an assignment that could compromise our years of impeccable scientific service — no contract is worth diluting our core values.",
+  },
+];
 
 const WHO_WE_SERVE = [
   {
@@ -92,40 +111,34 @@ export default function MedlishHome() {
             <div className="pointer-events-none absolute -left-6 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-[#C9A227] to-transparent sm:block lg:-left-10" />
 
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+              Medlish Communications
+            </p>
+
+            <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-[3.4rem]">
               Context-Intelligent Medical Communication for Modern Healthcare
               Brands
-            </p>
-
-            <h1 className="font-display mt-3 text-4xl leading-[1.08] text-[#110069] sm:text-5xl lg:text-6xl">
-              Medlish
-              <br />
-              Communications
             </h1>
 
-            <p className="mt-6 max-w-md font-display text-2xl italic leading-snug text-[#181430]/85 sm:text-3xl">
-              "You don't need to explain
-              <br />
-              your science twice."
-            </p>
-
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-[#181430]/65">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#181430]/70">
+              Clear. Credible. Context-aware scientific communication shaped
+              by deep expertise.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
-                to="/service"
+                to="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-[#110069] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(17,0,105,0.5)] transition-transform hover:-translate-y-0.5"
               >
-                Explore Our Services
+                Work with Us
                 <ArrowRight size={16} />
               </Link>
-              <Link
-                to="/ourwork"
+              <a
+                href="#big-idea"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#110069] underline decoration-[#C9A227] decoration-2 underline-offset-4"
               >
-                See Our Work
+                Explore Our Approach
                 <ChevronRight size={16} />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -134,7 +147,7 @@ export default function MedlishHome() {
             <img
               src={pic}
               alt="Clinician engaging with scientific data"
-              className="absolute inset-0 h-full w-full  opacity-90"
+              className="absolute inset-0 h-full w-full opacity-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0140] via-[#0a0140]/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-8 text-white">
@@ -149,8 +162,20 @@ export default function MedlishHome() {
         </div>
       </section>
 
-      {/* ================= HI, THIS IS MEDLISH ================= */}
+      {/* ================= SUBHERO ================= */}
       <section className="border-y border-[#110069]/10 bg-white">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-5 py-12 text-center sm:px-8 sm:py-16">
+          <span className="h-px w-16 bg-[#C9A227]" />
+          <p className="font-display text-xl italic leading-snug text-[#110069] sm:text-2xl">
+            Scientific communication that understands your product, your
+            science, and your context — from the very first conversation.
+          </p>
+          <span className="h-px w-16 bg-[#C9A227]" />
+        </div>
+      </section>
+
+      {/* ================= OPENING STATEMENT ================= */}
+      <section className="bg-white">
         <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
             Hi, This Is Medlish
@@ -159,9 +184,9 @@ export default function MedlishHome() {
           <p className="mt-5 font-display text-2xl leading-snug text-[#110069] sm:text-3xl">
             We bring something rare to pharmaceutical, nutraceutical, and
             healthcare organizations: deep and extensive medical expertise
-            backed by high-level, leadership-driven, empathetic listening —
-            and an immediate grasp of your real-world context from the very
-            first conversation.
+            backed by leadership-grade empathetic listening and an
+            immediate grasp of your real-world context from the very first
+            conversation.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -208,55 +233,57 @@ export default function MedlishHome() {
               truly land.
             </p>
           </div>
+
+          <p className="mt-8 text-center font-display text-lg italic leading-snug text-[#110069] sm:text-xl">
+            Medlish is where content aligns with context — and where your
+            message starts delivering from the very first line.
+          </p>
         </div>
       </section>
 
       {/* ================= OUR BIG IDEA ================= */}
-      <section className="border-y border-[#110069]/10 bg-white">
+      <section id="big-idea" className="border-y border-[#110069]/10 bg-[#FAF9F6]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
-                Our Big Idea
-              </span>
-              <h2 className="mt-3 font-display text-3xl text-[#110069] sm:text-4xl">
-                First, we set the context right.
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-[#181430]/65">
-                In science, content is only as powerful as the context it's
-                delivered in. Medlish exists at the intersection of deep
-                domain expertise, in-depth understanding of a problem within
-                its real-world context, the willingness to challenge "best
-                practice" when the evidence demands it, and an unwavering
-                commitment to scientific ethics and principles.
-              </p>
-            </div>
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+              Our Big Idea
+            </span>
+            <h2 className="mt-3 font-display text-3xl text-[#110069] sm:text-4xl">
+              First, we set the context right.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-[#181430]/65">
+              In science, content fails to deliver when it is created
+              without a thorough understanding of the context — and the
+              nuances of where, how, and to whom it must be conveyed.
+              Medlish exists at the intersection of deep medical expertise,
+              real-world contextual insight, and leadership-grade
+              scientific integrity, ensuring that every message is
+              sculpted with clarity, credibility, and purpose.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {[
-                "Deep domain expertise",
-                "In-depth understanding of the problem within the context",
-                'Willingness to challenge "best practice"',
-                "Commitment to scientific ethics and principles",
-              ].map((factor, i) => (
-                <div
-                  key={factor}
-                  className="rounded-2xl border border-[#110069]/10 bg-[#FAF9F6] p-6 transition-colors hover:border-[#C9A227]/50"
-                >
-                  <span className="font-display text-3xl text-[#C9A227]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="mt-3 text-sm font-medium leading-snug text-[#181430]/80">
-                    {factor}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {BIG_IDEA_FACTORS.map(({ title, body }, i) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-[#110069]/10 bg-white p-6 transition-colors hover:border-[#C9A227]/50 sm:p-7"
+              >
+                <span className="font-display text-3xl text-[#C9A227]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 text-base font-semibold leading-snug text-[#110069]">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#181430]/65">
+                  {body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* ================= WHO WE SERVE ================= */}
+    
+      {/* ================= WHO WE SERVE ================= 
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-12 max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
@@ -292,9 +319,9 @@ export default function MedlishHome() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* ================= BY THE NUMBERS ================= */}
+      {/* ================= BY THE NUMBERS ================= 
       <section className="bg-[#110069]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
@@ -320,9 +347,9 @@ export default function MedlishHome() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
-      {/* ================= TRUSTED BY ================= */}
+      {/* ================= TRUSTED BY ================= 
       <section id="work" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
           Trusted By
@@ -345,9 +372,9 @@ export default function MedlishHome() {
             <LogoChip key={name} name={name} />
           ))}
         </div>
-      </section>
+      </section>*/}
 
-      {/* ================= FEATURED PARTNERSHIP ================= */}
+      {/* ================= FEATURED PARTNERSHIP ================= 
       <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-gradient-to-r from-[#110069] to-[#241394] p-8 sm:flex-row sm:items-center sm:p-10">
           <div>
@@ -369,9 +396,9 @@ export default function MedlishHome() {
             <ArrowRight size={16} />
           </Link>
         </div>
-      </section>
+      </section>*/}
 
-      {/* ================= CLOSING CTA ================= */}
+      {/* ================= CLOSING CTA ================= 
       <section id="contact" className="border-t border-[#110069]/10 bg-white">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
@@ -389,7 +416,8 @@ export default function MedlishHome() {
             <ArrowRight size={16} />
           </Link>
         </div>
-      </section>
+      </section>*/}
+      
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 
 /**
@@ -15,6 +16,7 @@ const LEADERSHIP = [
     org: "Dr. VRE Labs",
     email: "dr.arasan@medlish.com",
     phone: "(+91) 9841013467",
+    bio: "A physician-scientist with decades of experience in pharmaceutical medicine, clinical practice, and scientific strategy. Dr. Arasan leads Medlish with a commitment to ethical communication, evidence-aligned thinking, and context-intelligent scientific leadership.",
   },
   {
     name: "Hariram Krishnan",
@@ -23,14 +25,16 @@ const LEADERSHIP = [
     org: "Former Managing Director, Galderma",
     email: null,
     phone: null,
+    bio: "A seasoned industry leader whose strategic insight and mentorship strengthen Medlish's scientific direction and organizational clarity.",
   },
   {
-    name: "Sailatha Ravi",
+    name: "Dr. Sailatha Ravi",
     credentials: "M.S., Ph.D.",
     title: "Vice President",
     org: "",
     email: "sailatha@medlishcommunications.com",
     phone: "(+91) 8946041355",
+    bio: "A translational research expert and scientific strategist who oversees Medlish's research programs, publication pipelines, and cross-functional scientific operations.",
   },
   {
     name: "Scott Karren",
@@ -39,6 +43,7 @@ const LEADERSHIP = [
     org: "",
     email: null,
     phone: null,
+    bio: "A global business leader whose experience in healthcare ventures supports Medlish's expansion, partnerships, and scientific commercialization pathways.",
   },
 ];
 
@@ -46,20 +51,23 @@ const ADVISORY = [
   {
     name: "Tom Myers",
     role: "CFO, Super Bio Probiotic / Vemtowa Nutraceutical",
+    bio: "Brings financial and operational expertise to support Medlish's growth in nutraceutical and biotech domains.",
   },
   {
     name: "Mahesh Mathrubutham",
-    role: "President, SuperBio; Co-founder and Director, Vemtowa",
+    role: "President, SuperBio; Co-founder & Director, Vemtowa",
+    bio: "A leader in nutraceutical innovation whose insights strengthen Medlish's evidence-aligned consumer health communication.",
   },
   {
     name: "Salil Kallianpur",
-    role: "Founder and Managing Director, ARKS Knowledge Consulting Pvt Ltd",
+    role: "Founder & Managing Director, ARKS Knowledge Consulting Pvt Ltd",
+    bio: "A respected pharmaceutical strategist who contributes deep industry perspective to Medlish's scientific and medico-marketing programs.",
   },
 ];
 
 const BROADER_NETWORK = [
   "Members of the American Medical Writers Association",
-  "Member of the European Medical Writers Association",
+  "Members of the European Medical Writers Association",
   "CMPP-certified writers",
   "Independent consultants for global publication houses",
   "PhDs, MSs, and medical professionals",
@@ -85,7 +93,7 @@ function SectionLabel({ children }) {
 }
 
 function LeadershipCard({ person }) {
-  const { name, credentials, title, org, email, phone } = person;
+  const { name, credentials, title, org, email, phone, bio } = person;
   return (
     <div className="flex flex-col rounded-2xl border border-[#110069]/10 bg-white p-6 sm:p-8">
       <div className="flex items-start gap-4">
@@ -107,6 +115,12 @@ function LeadershipCard({ person }) {
           )}
         </div>
       </div>
+
+      {bio && (
+        <p className="mt-4 text-sm leading-relaxed text-[#181430]/65">
+          {bio}
+        </p>
+      )}
 
       {(email || phone) && (
         <div className="mt-5 flex flex-col gap-2 border-t border-[#110069]/10 pt-5">
@@ -181,7 +195,7 @@ export default function Team() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
-            {ADVISORY.map(({ name, role }) => (
+            {ADVISORY.map(({ name, role, bio }) => (
               <div
                 key={name}
                 className="rounded-2xl border border-[#110069]/10 bg-white p-6"
@@ -194,6 +208,9 @@ export default function Team() {
                 </h3>
                 <p className="mt-1 text-sm leading-relaxed text-[#181430]/65">
                   {role}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[#181430]/55">
+                  {bio}
                 </p>
               </div>
             ))}
@@ -219,6 +236,13 @@ export default function Team() {
               </span>
             ))}
           </div>
+
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/60">
+            Our extended network includes certified medical writers, global
+            publication consultants, clinical researchers, statisticians,
+            and scientific specialists, enabling Medlish to deliver
+            high-quality, multidisciplinary scientific output at scale.
+          </p>
         </div>
       </section>
 
@@ -232,13 +256,13 @@ export default function Team() {
             Reach out directly to our leadership, or tell us about your
             project and we'll route it to the right person.
           </p>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#110069] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(17,0,105,0.5)] transition-transform hover:-translate-y-0.5"
           >
             Start a Conversation
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
     </>

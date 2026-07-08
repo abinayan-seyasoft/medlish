@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FileText, CalendarDays, Award, ArrowRight, ArrowUpRight } from "lucide-react";
 
 /**
@@ -22,9 +23,24 @@ import { FileText, CalendarDays, Award, ArrowRight, ArrowUpRight } from "lucide-
 
 const CATEGORIES = [
   { key: "all", label: "All", icon: null },
-  { key: "guideline", label: "Guideline Summaries", icon: FileText },
-  { key: "event", label: "Event Recaps", icon: CalendarDays },
-  { key: "story", label: "Success Stories", icon: Award },
+  {
+    key: "guideline",
+    label: "Guideline Summaries",
+    icon: FileText,
+    intro: "Practical, clinician-ready interpretations of the guidance we help shape.",
+  },
+  {
+    key: "event",
+    label: "Event Recaps",
+    icon: CalendarDays,
+    intro: "Highlights from scientific meetings and consortium engagements.",
+  },
+  {
+    key: "story",
+    label: "Success Stories",
+    icon: Award,
+    intro: "Real-world impact from our scientific programs.",
+  },
 ];
 
 const POSTS = [
@@ -34,6 +50,8 @@ const POSTS = [
     title: "Inside the Heart Failure Profiling Wheel",
     excerpt:
       "A look at the simplified model we developed to help physicians operationalize Guideline-Directed Medical Therapy (GDMT) at the point of care.",
+    insight:
+      "This profiling wheel translates complex heart-failure algorithms into a practical, point-of-care decision tool — enabling clinicians to apply GDMT with clarity and confidence.",
   },
   {
     category: "guideline",
@@ -41,6 +59,8 @@ const POSTS = [
     title: "Screening & Therapeutic Recommendations for MASLD",
     excerpt:
       "Summarizing the practical screening and treatment guidance we helped shape for diabetologists managing MASLD.",
+    insight:
+      "Our work distills evolving MASLD evidence into actionable recommendations — bridging hepatology, endocrinology, and metabolic care.",
   },
   {
     category: "guideline",
@@ -48,6 +68,8 @@ const POSTS = [
     title: "Re-Defining Type 2 Diabetes Criteria in Elderly Populations",
     excerpt:
       "Why age-adjusted criteria matter, and what changed in the updated management guidance for elderly T2D patients.",
+    insight:
+      "This guidance reframes T2D diagnosis and management for older adults, ensuring clinical decisions reflect physiology, risk, and functional status.",
   },
   {
     category: "event",
@@ -55,6 +77,8 @@ const POSTS = [
     title: "Medlish at the 8th International Diabetes Experts Consortium",
     excerpt:
       "Recapping our participation in Pune as a Channel Partner of IDEC's i-Connect Program, and what it means for our diabetes and endocrine network.",
+    insight:
+      "Our involvement strengthens India's diabetes education ecosystem, connecting clinicians with evidence-aligned tools and emerging insights.",
   },
   {
     category: "event",
@@ -62,6 +86,8 @@ const POSTS = [
     title: "HFAI 2025: Highlights from the Floor",
     excerpt:
       "Key themes and conversations from the Heart Failure Association of India's 2025 meeting.",
+    insight:
+      "From GDMT adoption to emerging HF phenotypes, this recap captures the scientific momentum shaping India's cardiology landscape.",
   },
   {
     category: "story",
@@ -69,6 +95,8 @@ const POSTS = [
     title: "From Postgraduate Thesis to Published Research",
     excerpt:
       "A look at how our Thesis-to-Publication program helps close the gap — the ~75% of postgraduate thesis work that never gets published.",
+    insight:
+      "We help clinicians transform dormant academic work into peer-reviewed scientific contribution — building visibility, credibility, and long-term impact.",
   },
 ];
 
@@ -87,6 +115,8 @@ export default function Insights() {
     activeCategory === "all"
       ? POSTS
       : POSTS.filter((post) => post.category === activeCategory);
+
+  const activeCategoryMeta = CATEGORIES.find((c) => c.key === activeCategory);
 
   return (
     <>
@@ -135,9 +165,16 @@ export default function Insights() {
             })}
           </div>
 
+          {/* Contextual category framing line — only shown for a specific category, not "All" */}
+          {activeCategoryMeta?.intro && (
+            <p className="mt-4 text-sm font-medium italic text-[#8a6c14]">
+              {activeCategoryMeta.intro}
+            </p>
+          )}
+
           {/* Posts grid */}
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {visiblePosts.map(({ tag, title, excerpt }) => (
+            {visiblePosts.map(({ tag, title, excerpt, insight }) => (
               <article
                 key={title}
                 className="group flex flex-col rounded-2xl border border-[#110069]/10 bg-[#FAF9F6] p-6 transition-shadow hover:shadow-[0_20px_40px_-24px_rgba(17,0,105,0.35)]"
@@ -148,8 +185,11 @@ export default function Insights() {
                 <h3 className="mt-4 font-display text-lg leading-snug text-[#110069] sm:text-xl">
                   {title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#181430]/65">
+                <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
                   {excerpt}
+                </p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#181430]/55">
+                  {insight}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#110069]">
                   Read more
@@ -180,13 +220,13 @@ export default function Insights() {
             If you'd like to contribute a recap or success story to
             Insights, reach out to our team.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#C9A227] px-7 py-3.5 text-sm font-semibold text-[#110069] transition-transform hover:-translate-y-0.5"
           >
             Get in Touch
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
     </>

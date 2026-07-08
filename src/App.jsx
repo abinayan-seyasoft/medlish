@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./layout/Layout";
 import MedlishHome from "./pages/HomePage";
 import AboutUs from "./pages/Aboutus";
@@ -24,6 +24,7 @@ function App() {
           <Route path= "/team" element = {<Team/>} />
           <Route path="/insight" element={<Insights/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="*" element= {<Navigate to="/" replace/>} />
         </Route>
       </Routes>
     </BrowserRouter>

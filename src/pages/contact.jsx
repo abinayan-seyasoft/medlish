@@ -28,14 +28,25 @@ const DIRECT_CONTACTS = [
     credentials: "M.B., B.S., M.D., FACP",
     title: "President",
     email: "dr.arasan@medlish.com",
-    phone: "(+91) 9841013467",
+    phone: null,
   },
   {
-    name: "Sailatha Ravi",
+    name: "Dr. Sailatha Ravi",
     credentials: "M.S., Ph.D.",
     title: "Vice President",
     email: "sailatha@medlishcommunications.com",
     phone: "(+91) 8946041355",
+  },
+];
+
+const CLOSING_QUOTES = [
+  {
+    text: "The art of conversation is the art of hearing as well as of being heard.",
+    author: "William Hazlitt",
+  },
+  {
+    text: "Content is king. Context is God.",
+    author: null,
   },
 ];
 
@@ -277,22 +288,28 @@ export default function Contact() {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-4 flex flex-col gap-2 border-t border-[#110069]/10 pt-4">
-                      <a
-                        href={`mailto:${email}`}
-                        className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
-                      >
-                        <Mail size={15} className="text-[#C9A227]" />
-                        {email}
-                      </a>
-                      <a
-                        href={`tel:${phone.replace(/[^\d+]/g, "")}`}
-                        className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
-                      >
-                        <Phone size={15} className="text-[#C9A227]" />
-                        {phone}
-                      </a>
-                    </div>
+                    {(email || phone) && (
+                      <div className="mt-4 flex flex-col gap-2 border-t border-[#110069]/10 pt-4">
+                        {email && (
+                          <a
+                            href={`mailto:${email}`}
+                            className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
+                          >
+                            <Mail size={15} className="text-[#C9A227]" />
+                            {email}
+                          </a>
+                        )}
+                        {phone && (
+                          <a
+                            href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                            className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
+                          >
+                            <Phone size={15} className="text-[#C9A227]" />
+                            {phone}
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -301,22 +318,29 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ================= CLOSING QUOTE ================= */}
+      {/* ================= CLOSING QUOTES ================= */}
       <section className="bg-[#110069]">
-        <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20 lg:px-10">
-          <Quote
-            size={32}
-            className="mx-auto text-[#C9A227]"
-            fill="currentColor"
-            strokeWidth={0}
-          />
-          <p className="mt-5 font-display text-xl italic leading-snug text-white sm:text-2xl">
-            "The art of conversation is the art of hearing as well as of
-            being heard."
-          </p>
-          <p className="mt-4 text-sm font-medium text-[#C9A227]">
-            — William Hazlitt
-          </p>
+        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+            {CLOSING_QUOTES.map(({ text, author }) => (
+              <div key={text} className="text-center sm:text-left">
+                <Quote
+                  size={28}
+                  className="mx-auto text-[#C9A227] sm:mx-0"
+                  fill="currentColor"
+                  strokeWidth={0}
+                />
+                <p className="mt-4 font-display text-xl italic leading-snug text-white sm:text-2xl">
+                  "{text}"
+                </p>
+                {author && (
+                  <p className="mt-3 text-sm font-medium text-[#C9A227]">
+                    — {author}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

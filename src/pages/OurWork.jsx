@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Activity,
   GraduationCap,
@@ -16,12 +17,12 @@ import {
  */
 
 const STATS = [
-  { value: "3,000+", label: "Total projects" },
-  { value: "2,000+", label: "Original articles" },
-  { value: "20+", label: "Systematic reviews / meta-analyses" },
-  { value: "25+", label: "Registries" },
+  { value: "3,000+", label: "Total projects delivered" },
+  { value: "2,000+", label: "Original articles published" },
+  { value: "20+", label: "Systematic reviews & meta-analyses" },
+  { value: "25+", label: "Registries built & managed" },
   { value: "5+", label: "Pan-India consensus statements & guidelines" },
-  { value: "1,000+", label: "Total published research work" },
+  { value: "1,000+", label: "Total published research works" },
 ];
 
 const THERAPY_AREAS = [
@@ -38,46 +39,55 @@ const THERAPY_AREAS = [
   "Infectious Diseases",
   "Gastroenterology",
   "Surgery",
+  "Surgical Oncology",
 ];
 
 const THESIS_STEPS = [
   {
     title: "A fresh perspective",
-    body: "Another pair of scientific eyes often reveals more than one publication hiding in a single thesis.",
+    body: "Uncover multiple publishable insights from a single thesis.",
   },
   {
     title: "A lasting impression",
-    body: "We help younger doctors (35–45 years) publish their thesis work and build a lasting professional legacy.",
+    body: "Help younger doctors (35–45 years) build a professional legacy.",
   },
   {
     title: "A bigger contribution",
-    body: "Some thesis work has genuine scope to extend into a larger scientific contribution and gain wider recognition.",
+    body: "Extend thesis work into broader scientific influence.",
   },
 ];
 
 const EHR_STAGES = [
-  { stage: "Dormant data → meaningful inferences", role: "you become a scientific partner" },
-  { stage: "Meaningful inferences → publications", role: "you become an enabler" },
-  { stage: "Publications → thought leadership", role: "you become a collaborator" },
-  { stage: "Thought leadership → textbooks", role: "you become an associate mentor" },
-  { stage: "Thought leadership → guideline-setting", role: "you become a soft influencer" },
-  { stage: "National & international eminence", role: "you become a long-term friend, philosopher, and guide" },
+  "Dormant data → meaningful inferences",
+  "Meaningful inferences → publications",
+  "Publications → thought leadership",
+  "Thought leadership → textbooks",
+  "Thought leadership → guideline-setting",
+  "National & international eminence",
 ];
 
 const REGISTRY_POINTS = [
-  "Help doctors collaborate — we create the assembly points and coordinate deliberations",
-  "Help doctors collate data — we manage data and surface valuable insights",
-  "Help doctors draw inferences — we act as a real-time analytical partner",
-  "Registries inform product portfolio design, NPD strategy, and early trend detection",
+  {
+    label: "Collaborate",
+    body: "Creating assembly points and coordinating deliberations.",
+  },
+  {
+    label: "Collate",
+    body: "Managing data and surfacing valuable insights.",
+  },
+  {
+    label: "Conclude",
+    body: "Acting as a real-time analytical partner.",
+  },
 ];
 
 const CONSENSUS_POINTS = [
-  "Meta-analysis & systematic review development",
+  "Meta-analyses & systematic reviews",
   "Patent-related scientific work",
   "World Congress support",
   "Drug development & gene therapy content",
   "Position papers (KOM articles)",
-  "ACERT committee (Founder Trustee involvement)",
+  "ACERT committee involvement",
   "Multi-site clinical trial coordination",
   "National surveys",
 ];
@@ -87,17 +97,17 @@ const DIABETOLOGY_MODULES = [
   "Modules for patient educators",
   "Modules for patients",
   "Modules for nutritionists",
-  "Modules on emerging tech for T1DM management",
-  "Patient-centric decision-support tools and Guideline-Directed Medical Therapy (GDMT) models",
+  "Modules on emerging technologies for T1DM management",
+  "Patient-centric decision-support tools & GDMT models",
 ];
 
 const GUIDELINES = [
-  { bold: "MASLD management", rest: "— screening & therapeutic recommendations (target: diabetologists)" },
-  { bold: "Heart Failure Profiling Wheel", rest: "— a simplified model operationalizing Guideline-Directed Medical Therapy (target: physicians)" },
+  { bold: "MASLD management", rest: "— screening & therapeutic recommendations" },
+  { bold: "Heart Failure Profiling Wheel", rest: "— operationalizing GDMT" },
   { bold: "In-hospital management of Type 2 diabetes", rest: "— strategy models" },
-  { bold: "Vitamin D levels and COVID-19", rest: "— management considerations" },
-  { bold: "Type 1 diabetes in low-resource settings", rest: "— guidance for management in India" },
-  { bold: "Type 2 diabetes in elderly populations", rest: "— re-defined management criteria" },
+  { bold: "Vitamin D & COVID-19", rest: "— management considerations" },
+  { bold: "Type 1 diabetes in low-resource settings", rest: "— India-specific guidance" },
+  { bold: "Type 2 diabetes in elderly populations", rest: "— re-defined criteria" },
 ];
 
 const OUTPUT_FORMATS = [
@@ -150,11 +160,11 @@ export default function OurWork() {
               Our Work
             </p>
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
-              Numbers tell part of the story.
+              Success Snapshot
             </h1>
             <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
-              Here's what nearly a decade of scientific partnership looks
-              like in practice.
+              Nearly a decade of scientific partnership — translated into
+              impact.
             </p>
           </div>
         </div>
@@ -164,12 +174,7 @@ export default function OurWork() {
       {/* ================= SUCCESS SNAPSHOT ================= */}
       <section className="bg-[#110069]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-          <SectionLabel>Success Snapshot</SectionLabel>
-          <h2 className="mt-3 font-display text-3xl text-white sm:text-4xl">
-            Nearly a decade, in numbers.
-          </h2>
-
-          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
             {STATS.map((stat) => (
               <div key={stat.label} className="border-l-2 border-[#C9A227]/60 pl-4">
                 <div className="font-display text-3xl text-white sm:text-4xl">
@@ -182,11 +187,18 @@ export default function OurWork() {
             ))}
           </div>
 
-          <div className="mt-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
-              Therapy Areas Covered
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
+          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-white/60">
+            These numbers reflect not just volume — but sustained scientific
+            contribution across clinical, academic, and pharmaceutical
+            ecosystems.
+          </p>
+
+          <div className="mt-14 border-t border-white/10 pt-10">
+            <SectionLabel>Therapy Areas Covered</SectionLabel>
+            <h2 className="mt-3 font-display text-2xl text-white sm:text-3xl">
+              Breadth across specialties. Depth in every project.
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-3">
               {THERAPY_AREAS.map((area) => (
                 <span
                   key={area}
@@ -196,6 +208,10 @@ export default function OurWork() {
                 </span>
               ))}
             </div>
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60">
+              Our work spans the full spectrum of modern medicine — with
+              contextual intelligence in each domain.
+            </p>
           </div>
         </div>
       </section>
@@ -217,7 +233,7 @@ export default function OurWork() {
             >
               <p className="text-sm leading-relaxed text-[#181430]/65">
                 A comprehensive Type 1 Diabetes education initiative
-                including:
+                designed for multi-stakeholder impact:
               </p>
               <ul className="mt-4 space-y-2.5">
                 {DIABETOLOGY_MODULES.map((item) => (
@@ -227,6 +243,10 @@ export default function OurWork() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+                This program demonstrates our ability to build structured,
+                scalable, clinically relevant education ecosystems.
+              </p>
             </ProgramCard>
 
             {/* Thesis to Publication */}
@@ -235,11 +255,16 @@ export default function OurWork() {
               eyebrow="Signature Program"
               title="Thesis to Publication"
             >
-              <p className="text-sm leading-relaxed text-[#181430]/65">
-                In our experience, at least{" "}
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+                Closing a long-standing gap in academic publishing.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+                Nearly{" "}
                 <span className="font-semibold text-[#110069]">75%</span> of
-                doctors never adequately publish the thesis work completed
-                during their postgraduate years. We close that gap.
+                doctors never publish their postgraduate thesis work,
+                leaving valuable scientific insights unused. Medlish helps
+                convert dormant academic work into lasting scientific
+                contribution.
               </p>
               <div className="mt-5 flex flex-col gap-4">
                 {THESIS_STEPS.map(({ title, body }, i) => (
@@ -258,6 +283,10 @@ export default function OurWork() {
                   </div>
                 ))}
               </div>
+              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+                This program is a testimony that we act as a catalyst for
+                academic visibility and scientific continuity.
+              </p>
             </ProgramCard>
 
             {/* EHR/EMR to Publications — full width, timeline style */}
@@ -275,13 +304,16 @@ export default function OurWork() {
                   </h3>
                 </div>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-[#181430]/65">
-                We walk institutions through a six-stage journey from
-                dormant data to lasting scientific influence:
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+                From dormant data to national influence — a six-stage
+                journey.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+                We guide institutions through a structured transformation:
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {EHR_STAGES.map(({ stage, role }, i) => (
+                {EHR_STAGES.map((stage, i) => (
                   <div
                     key={stage}
                     className="rounded-xl border border-[#110069]/10 bg-[#FAF9F6] p-5"
@@ -291,9 +323,6 @@ export default function OurWork() {
                     </span>
                     <p className="mt-2 text-sm font-semibold leading-snug text-[#110069]">
                       {stage}
-                    </p>
-                    <p className="mt-1.5 text-xs italic leading-relaxed text-[#181430]/55">
-                      {role}
                     </p>
                   </div>
                 ))}
@@ -306,23 +335,45 @@ export default function OurWork() {
               eyebrow="Signature Program"
               title="Registry Creation & Quality Management"
             >
-              <ul className="space-y-2.5">
-                {REGISTRY_POINTS.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-[#181430]/70">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+                Turning collaboration into scientific intelligence.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+                We help doctors:
+              </p>
+              <div className="mt-4 flex flex-col gap-3">
+                {REGISTRY_POINTS.map(({ label, body }) => (
+                  <div key={label} className="flex gap-3">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
-                    {item}
-                  </li>
+                    <p className="text-sm leading-relaxed text-[#181430]/70">
+                      <span className="font-semibold text-[#110069]">
+                        {label}
+                      </span>{" "}
+                      — {body}
+                    </p>
+                  </div>
                 ))}
-              </ul>
+              </div>
+              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+                Registries inform product portfolio design, new product
+                development strategy, and early trend detection — making
+                them invaluable for both clinicians and industry.
+              </p>
             </ProgramCard>
 
-            {/* Consensus Creation & Opinion */}
+            {/* Consensus Creation & Opinion Leadership */}
             <ProgramCard
               icon={Users}
               eyebrow="Signature Program"
-              title="Consensus Creation & Opinion"
+              title="Consensus Creation & Opinion Leadership"
             >
-              <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+                Evidence-aligned influence at national scale.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+                Our contributions include:
+              </p>
+              <ul className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {CONSENSUS_POINTS.map((item) => (
                   <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-[#181430]/70">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
@@ -330,6 +381,10 @@ export default function OurWork() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+                This program demonstrates our ability to shape scientific
+                opinion responsibly and ethically.
+              </p>
             </ProgramCard>
           </div>
         </div>
@@ -340,11 +395,14 @@ export default function OurWork() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <SectionLabel>National Guideline Contributions</SectionLabel>
           <h2 className="mt-3 max-w-2xl font-display text-3xl text-[#110069] sm:text-4xl">
-            Medlish content has directly informed national medical practice
-            guidance.
+            Scientific work that shapes medical practice.
           </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#181430]/65">
+            Medlish content has directly informed national medical practice
+            guidance, including:
+          </p>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {GUIDELINES.map(({ bold, rest }) => (
               <div
                 key={bold}
@@ -358,6 +416,11 @@ export default function OurWork() {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+            These contributions reflect our leadership-grade scientific
+            integrity and real-world relevance.
+          </p>
         </div>
       </section>
 
@@ -382,7 +445,7 @@ export default function OurWork() {
           <div className="rounded-2xl border border-[#110069]/10 bg-white p-6 sm:p-7">
             <p className="text-sm leading-relaxed text-[#181430]/70">
               <span className="font-semibold text-[#110069]">
-                Clinical observations and data
+                Clinical observations & data
               </span>{" "}
               become analyzed, dashboarded, shareable, publishable — even
               patentable — assets.
@@ -390,9 +453,17 @@ export default function OurWork() {
           </div>
         </div>
 
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+          This section shows our ability to convert raw scientific material
+          into structured, high-impact output.
+        </p>
+
         <div className="mt-8 rounded-2xl bg-[#110069] p-6 sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
             Output Formats We Produce
+          </p>
+          <p className="mt-2 text-sm text-white/60">
+            A complete spectrum of scientific communication.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             {OUTPUT_FORMATS.map((format) => (
@@ -417,13 +488,13 @@ export default function OurWork() {
             Tell us what you're sitting on — we'll help you see the
             publication, registry, or guideline hiding inside it.
           </p>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#110069] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(17,0,105,0.5)] transition-transform hover:-translate-y-0.5"
           >
             Start a Conversation
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
     </>

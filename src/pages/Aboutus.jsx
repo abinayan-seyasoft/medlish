@@ -1,5 +1,6 @@
 import React from "react";
-import { Quote, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Quote, Sparkles, ArrowRight } from "lucide-react";
 
 /**
  * Medlish Communications — About Us Page
@@ -8,35 +9,53 @@ import { Quote, Sparkles } from "lucide-react";
 
 const PHILOSOPHY = [
   {
-    title: "Deep domain expertise",
-    body: "Writers and strategists who understand the science, not just the style guide.",
+    title: "Evidence-Aligned Thinking",
+    body: 'We challenge outdated norms when the science demands it. We do not follow "best practice" blindly — we follow evidence, logic, and real-world insight.',
   },
   {
-    title: "In-depth understanding of the problem within its context",
-    body: "We don't write in a vacuum; we study the clinical, cultural, and market environment first.",
+    title: "Contextual Intelligence",
+    body: "We study the clinical, cultural, and market environment surrounding every problem. We understand the forces shaping decisions, the constraints teams operate under, and the audiences who must be influenced. This is how we ensure relevance, not just accuracy.",
   },
   {
-    title: 'Willingness to challenge "best practice"',
-    body: "When evidence says the standard approach is outdated, we say so.",
+    title: "Deep Domain Expertise",
+    body: "Our team brings decades of pharmaceutical medicine practice, clinical experience, translational research, regulatory understanding, and medical affairs leadership. This is not just expertise — it is perspective.",
   },
   {
-    title: "Commitment to scientific ethics and principles",
-    body: "Neutrality and integrity are not optional.",
+    title: "Scientific Ethics & Integrity",
+    body: "Neutrality and integrity are foundational. We decline work that compromises scientific truth, and we never distort evidence for convenience. Our reputation is built on responsibility — and we protect it fiercely.",
   },
 ];
 
-const QUOTES = [
+const PHILOSOPHY_QUOTES = [
   {
-    text: "The strength of the team is each individual member. The strength of each member is the team.",
-    author: "Phil Jackson",
+    text: "Ethics is knowing the difference between what you have a right to do and what is right to do.",
+    author: "Potter Stewart",
   },
   {
-    text: "Every act of communication is a miracle of translation.",
-    author: "Ken Liu",
+    text: "Communication is not the last step of science — it is the moment science becomes useful.",
+    author: "Medlish Communicators",
+  },
+];
+
+const DIFFERENT_QUOTES = [
+  {
+    text: "The greatest enemy of knowledge is not ignorance; it is the illusion of knowledge.",
+    author: "Stephen Hawking",
   },
   {
-    text: "The most important thing in communication is to hear what isn't being said.",
-    author: "Peter Drucker",
+    text: "Evidence guides us. Context shapes us. Ethics defines us.",
+    author: "Medlish Communicators",
+  },
+];
+
+const GROWTH_QUOTES = [
+  {
+    text: "The purpose of science is not to open the door to infinite wisdom, but to set a limit to infinite error.",
+    author: "Bertolt Brecht",
+  },
+  {
+    text: "Clarity is not simplicity; it is precision delivered with empathy.",
+    author: "Medlish Communicators",
   },
 ];
 
@@ -45,8 +64,8 @@ const GROWTH = [
     range: "2019–2021",
     label: "Foundations",
     points: [
-      "Research publications with publication houses (Wiley, Wolters Kluwer)",
-      "Association memberships: PGRN, CPIC, ACERT, IMA, IFDA, Nutrify",
+      "Research publications with Wiley and Wolters Kluwer",
+      "Memberships: PGRN, CPIC, ACERT, IMA, IFDA, Nutrify",
     ],
   },
   {
@@ -78,6 +97,39 @@ const GROWTH = [
   },
 ];
 
+function QuoteCard({ text, author, tone = "dark" }) {
+  if (tone === "light") {
+    return (
+      <div className="relative rounded-2xl border border-[#110069]/10 bg-[#FAF9F6] p-6 pl-14 sm:p-8 sm:pl-16">
+        <Quote
+          size={26}
+          className="absolute left-5 top-6 text-[#C9A227] sm:left-6 sm:top-7"
+          fill="currentColor"
+          strokeWidth={0}
+        />
+        <p className="font-display text-lg italic leading-snug text-[#110069] sm:text-xl">
+          "{text}"
+        </p>
+        <p className="mt-4 text-sm font-medium text-[#8a6c14]">— {author}</p>
+      </div>
+    );
+  }
+  return (
+    <div className="relative rounded-2xl bg-[#110069] p-6 pl-14 text-white sm:p-8 sm:pl-16">
+      <Quote
+        size={26}
+        className="absolute left-5 top-6 text-[#C9A227] sm:left-6 sm:top-7"
+        fill="currentColor"
+        strokeWidth={0}
+      />
+      <p className="font-display text-lg italic leading-snug sm:text-xl">
+        "{text}"
+      </p>
+      <p className="mt-4 text-sm font-medium text-[#C9A227]">— {author}</p>
+    </div>
+  );
+}
+
 export default function AboutUs() {
   return (
     <>
@@ -90,19 +142,27 @@ export default function AboutUs() {
             </p>
 
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
-              Context is everything.
+              Built on a simple truth.
             </h1>
 
-            <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
-              Medlish Communications is a healthcare-focused medical
-              communications initiative built on one conviction:{" "}
-              <span className="font-semibold text-[#110069]">
-                context is everything.
-              </span>{" "}
-              Great science only creates impact when it is framed for the
-              right audience, at the right depth, through the right channel.
-              That is the discipline we bring to every project.
-            </p>
+            <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
+              <p>
+                Medlish Communications was built on a simple truth:
+                scientific content only creates impact when it is shaped
+                with intelligence, sensitivity, and a deep understanding of
+                the environment in which it must operate.
+              </p>
+              <p>
+                Our work is not only just about writing. It is about
+                multidimensionality — interpreting, framing, and translating
+                science so it becomes useful, usable, and meaningful for the
+                people who depend on it.
+              </p>
+              <p>
+                We exist to bring that discipline and that clarity to modern
+                healthcare communication.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -121,8 +181,9 @@ export default function AboutUs() {
               Four qualities we consider non-negotiable.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[#181430]/65">
-              We believe great medical content sits at the intersection of
-              expertise, ethics, and real-world relevance.
+              These principles guide our thinking and define how we approach
+              every scientific challenge — the internal compass behind our
+              work.
             </p>
           </div>
 
@@ -144,6 +205,12 @@ export default function AboutUs() {
               </div>
             ))}
           </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {PHILOSOPHY_QUOTES.map((quote) => (
+              <QuoteCard key={quote.author + quote.text} {...quote} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -155,37 +222,32 @@ export default function AboutUs() {
               Why Medlish Is Different
             </span>
             <h2 className="mt-3 font-display text-3xl text-[#110069] sm:text-4xl">
-              We're enablers, not marketers.
+              We enable science — we don't market it.
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-[#181430]/65">
-              We have the experience — and we are neutral, ethical, and free
-              of any personal pharmaceutical marketing agenda. We act as{" "}
-              <span className="font-semibold text-[#110069]">enablers</span>,
-              giving full prominence to pharma companies and Key Opinion
-              Leaders (KOLs), while we do the background work: the scientific
-              foundation, the framework, and the rigor.
-            </p>
+            <div className="mt-5 flex flex-col gap-4 text-base leading-relaxed text-[#181430]/65">
+              <p>
+                We neither market science, nor do we have any marketing
+                businesses. We bring experience without agenda. We are{" "}
+                <span className="font-semibold text-[#110069]">
+                  neutral, ethical, and free of personal bias
+                </span>
+                .
+              </p>
+              <p>
+                Our role is to enable — giving full prominence to pharma
+                teams and Key Opinion Leaders (KOLs), while we build the
+                scientific foundation, the structure, and the rigor behind
+                the scenes.
+              </p>
+              <p className="font-display text-xl italic text-[#110069]">
+                We make others shine, and that is our strength.
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-col gap-5">
-            {QUOTES.map(({ text, author }) => (
-              <div
-                key={author}
-                className="relative rounded-2xl bg-[#110069] p-6 pl-14 text-white sm:p-8 sm:pl-16"
-              >
-                <Quote
-                  size={28}
-                  className="absolute left-5 top-6 text-[#C9A227] sm:left-6 sm:top-7"
-                  fill="currentColor"
-                  strokeWidth={0}
-                />
-                <p className="font-display text-lg italic leading-snug sm:text-xl">
-                  "{text}"
-                </p>
-                <p className="mt-4 text-sm font-medium text-[#C9A227]">
-                  — {author}
-                </p>
-              </div>
+            {DIFFERENT_QUOTES.map((quote) => (
+              <QuoteCard key={quote.author + quote.text} {...quote} />
             ))}
           </div>
         </div>
@@ -201,7 +263,7 @@ export default function AboutUs() {
             </span>
           </div>
           <h2 className="mt-3 font-display text-3xl text-white sm:text-4xl">
-            A snapshot of how our capabilities have expanded year over year.
+            A snapshot of how our capabilities have expanded.
           </h2>
 
           {/* Timeline */}
@@ -215,9 +277,7 @@ export default function AboutUs() {
                 return (
                   <div
                     key={range}
-                    className={`relative flex flex-col gap-4 pl-10 sm:pl-12 lg:grid lg:grid-cols-2 lg:gap-10 lg:py-8 lg:pl-0 ${
-                      isEven ? "" : ""
-                    }`}
+                    className="relative flex flex-col gap-4 pl-10 sm:pl-12 lg:grid lg:grid-cols-2 lg:gap-10 lg:py-8 lg:pl-0"
                   >
                     {/* Dot */}
                     <span className="absolute left-2.5 top-1.5 h-3 w-3 -translate-x-1/2 rounded-full bg-[#C9A227] sm:left-4 lg:left-1/2" />
@@ -255,8 +315,19 @@ export default function AboutUs() {
         </div>
       </section>
 
+      {/* ================= GROWTH QUOTES ================= */}
+      <section className="border-b border-[#110069]/10 bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {GROWTH_QUOTES.map((quote) => (
+              <QuoteCard key={quote.author + quote.text} {...quote} tone="light" />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ================= CLOSING CTA ================= */}
-      <section className="border-t border-[#110069]/10 bg-white">
+      <section className="bg-white">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
             Built on expertise. Guided by ethics. Driven by context.
@@ -265,12 +336,13 @@ export default function AboutUs() {
             If that's the kind of scientific partner you're looking for,
             we'd love to hear about your project.
           </p>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#110069] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(17,0,105,0.5)] transition-transform hover:-translate-y-0.5"
           >
             Start a Conversation
-          </a>
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
     </>

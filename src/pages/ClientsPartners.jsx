@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Landmark,
   GraduationCap,
@@ -30,8 +31,8 @@ const PUBLISHING_LOGOS = ["Wiley", "Wolters Kluwer", "Springer Nature"];
 
 const ACADEMIC_ASSOCIATES = [
   "Research Society for the Study of Diabetes in India (RSSDI)",
-  "ACERT (Associates for Cardiology Education and Research in TamilNadu)",
-  "IDEC / Academia Unlimited (Academy for Diabetes and Endocrine Research & Education, with Emory)",
+  "ACERT (Associates for Cardiology Education and Research in Tamil Nadu)",
+  "IDEC / Academia Unlimited (with Emory)",
   "Nutrify Today",
   "Heart Failure Association of India (HFAI)",
   "Indian Association of Cardiovascular-Thoracic Surgeons",
@@ -125,8 +126,8 @@ export default function ClientsPartners() {
               Trusted across pharma, publishing, and academia.
             </h1>
             <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
-              Nearly a decade of scientific partnership, built with the
-              organizations that set the standard in each of their fields.
+              Nearly a decade of scientific partnership built with
+              organizations that set the standard in their fields.
             </p>
           </div>
         </div>
@@ -145,14 +146,28 @@ export default function ClientsPartners() {
               <LogoChip key={name} name={name} />
             ))}
           </div>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+            These partnerships reflect our ability to work with teams that
+            demand scientific rigor, ethical clarity, and context-aware
+            communication, across therapy areas, product lifecycles, and
+            evidence needs.
+          </p>
 
-          <div className="mt-14">
+          <div className="mt-14 border-t border-[#110069]/10 pt-10">
             <SectionLabel>Publication Associates</SectionLabel>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <h2 className="mt-3 font-display text-2xl text-[#110069] sm:text-3xl">
+              Where our science finds a home.
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-3">
               {PUBLISHING_LOGOS.map((name) => (
                 <LogoChip key={name} name={name} />
               ))}
             </div>
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+              Our publication collaborations demonstrate credibility with
+              global scientific publishers, ensuring your work is
+              positioned with precision and integrity.
+            </p>
           </div>
         </div>
       </section>
@@ -167,6 +182,12 @@ export default function ClientsPartners() {
           <div className="mt-10">
             <AssociateList icon={Landmark} items={ACADEMIC_ASSOCIATES} />
           </div>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+            These associations reflect our commitment to scientific ethics,
+            evidence-aligned thinking, and real-world relevance — across
+            cardiology, endocrinology, metabolic health, and scientific
+            writing.
+          </p>
         </div>
       </section>
 
@@ -180,6 +201,11 @@ export default function ClientsPartners() {
           <div className="mt-10">
             <AssociateList icon={GraduationCap} items={UNIVERSITY_COLLABORATIONS} />
           </div>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+            Our collaborations span clinical research, translational
+            science, data science, and academic publishing, enabling
+            multi-institutional scientific output with global relevance.
+          </p>
         </div>
       </section>
 
@@ -192,27 +218,24 @@ export default function ClientsPartners() {
               Featured Partnership
             </span>
             <p className="mt-3 max-w-xl text-lg leading-snug text-white sm:text-xl">
-              Medlish Communications is proud to be a{" "}
-              <span className="font-semibold">
-                Channel Partner of IDEC's i-Connect Program
-              </span>
-              , most recently represented at the{" "}
-              <span className="font-semibold">
-                8th International Diabetes Experts Consortium
-              </span>
-              , Pune, India, and at{" "}
-              <span className="font-semibold">HFAI 2025</span>. This
-              partnership positions Medlish within a global network of
-              diabetes and endocrine research leadership.
+              Medlish is a Channel Partner of{" "}
+              <span className="font-semibold">IDEC's i-Connect Program</span>,
+              connecting our scientific content network to one of the
+              leading global diabetes education and research academies.
+            </p>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/70">
+              This partnership reflects our commitment to shaping diabetes
+              education, evidence dissemination, and clinician-ready
+              scientific communication at scale.
             </p>
           </div>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#C9A227] px-6 py-3 text-sm font-semibold text-[#110069] transition-transform hover:-translate-y-0.5"
           >
             Learn More
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -231,6 +254,11 @@ export default function ClientsPartners() {
               <LogoChip key={journal} name={journal} tone="dark" />
             ))}
           </div>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60">
+            Our publication footprint spans high-impact clinical, endocrine,
+            cardiology, metabolic, and general medicine journals —
+            demonstrating scientific credibility across specialties.
+          </p>
         </div>
       </section>
 
@@ -238,20 +266,19 @@ export default function ClientsPartners() {
       <section className="border-t border-[#110069]/10 bg-white">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
-            Become part of the network.
+            Become Part of the Network.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#181430]/65">
             Whether you're a pharma team, a publisher, or a research
-            institution — let's talk about what a partnership could look
-            like.
+            institution — let's explore what a partnership could look like.
           </p>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#110069] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(17,0,105,0.5)] transition-transform hover:-translate-y-0.5"
           >
             Start a Conversation
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
     </>
