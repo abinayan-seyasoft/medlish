@@ -18,8 +18,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <img src={logo} className="h-13 w-45" />
-            <p className="mt-3 text-sm leading-relaxed text-white/50">
+            <img src={logo} className="h-14 w-49" />
+            <p className="mt-3 text-[15px] leading-relaxed text-white/70">
                Context-Intelligent Medical Communication for Modern Healthcare
               Brands
              
@@ -29,7 +29,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
               Explore
             </h4>
-            <ul className="mt-4 space-y-2.5 text-sm text-white/60">
+            <ul className="mt-4 space-y-2.5 text-sm font-medium text-white/80">
               {NAV_LINKS.map(({ label, to }) => (
                 <li key={label}>
                   <Link to={to} className="transition-colors hover:text-white">
@@ -43,7 +43,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
               Contact
             </h4>
-            <ul className="mt-4 space-y-2.5 text-sm text-white/60">
+            <ul className="mt-4 space-y-2.5 text-sm text-white/80">
               <li>dr.arasan@medlish.com</li>
               <li>sailatha@medlishcommunications.com</li>
             </ul>
@@ -52,7 +52,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
               Legal
             </h4>
-            <ul className="mt-4 space-y-2.5 text-sm text-white/60">
+            <ul className="mt-4 space-y-2.5 text-sm text-white/80">
               <li>
                 <a href="#" className="hover:text-white">
                   Privacy Policy
@@ -66,7 +66,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/40">
+        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/70">
           © Medlish Communications. All rights reserved.
         </div>
       </div>

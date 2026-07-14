@@ -109,7 +109,7 @@ export default function Services() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Services
             </p>
 
@@ -118,7 +118,7 @@ export default function Services() {
               communication with depth, rigor, and context.
             </h1>
 
-            <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
+            <p className="mt-6 text-lg leading-relaxed text-gray-900">
               Medlish offers end-to-end medical and scientific communication
               support across six core service lines. Each service is
               delivered with precision, responsibility, and real-world
@@ -152,7 +152,7 @@ export default function Services() {
                 <h3 className="mt-5 font-display text-xl text-[#110069]">
                   {title}
                 </h3>
-                <p className="mt-1.5 text-sm italic text-[#181430]/55">
+                <p className="mt-1.5 text-base italic text-[#181430]/90">
                   {tagline}
                 </p>
 
@@ -160,7 +160,7 @@ export default function Services() {
                   {items.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-2.5 text-sm leading-relaxed text-[#181430]/70"
+                      className="flex gap-2.5 text-[15px] leading-relaxed text-[#181430]"
                     >
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
                       {item}
@@ -173,7 +173,7 @@ export default function Services() {
                     <Sparkle size={13} className="mt-0.5 shrink-0" />
                     What Makes This Distinctive
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-[#181430]/70">
+                  <p className="mt-2 text-base leading-relaxed text-[#181430]/90">
                     {distinctive}
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function Services() {
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-gradient-to-r from-[#110069] to-[#241394] p-8 sm:flex-row sm:items-center sm:p-10">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
               Not Sure Where to Start?
             </span>
             <p className="mt-3 max-w-xl text-lg leading-snug text-white sm:text-xl">

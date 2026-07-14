@@ -15,8 +15,9 @@ export default function Layout() {
       <style>{`
         @import url('${FONT_IMPORT_URL}');
         .font-display { font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; }
+        .font-cursive {font-family: "Playfair Display", serif;}
       `}</style>
-
+      
       <Navbar />
       <main>
         <Outlet />

@@ -22,7 +22,7 @@ const STATS = [
   { value: "20+", label: "Systematic reviews & meta-analyses" },
   { value: "25+", label: "Registries built & managed" },
   { value: "5+", label: "Pan-India consensus statements & guidelines" },
-  { value: "1,000+", label: "Total published research works" },
+  { value: "10,000+", label: "Total published research works" },
 ];
 
 const THERAPY_AREAS = [
@@ -122,7 +122,7 @@ const OUTPUT_FORMATS = [
 
 function SectionLabel({ children }) {
   return (
-    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+    <span className="text-2xl font-cursive font-extrabold capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
       {children}
     </span>
   );
@@ -136,7 +136,7 @@ function ProgramCard({ icon: Icon, eyebrow, title, children }) {
           <Icon size={20} />
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#C9A227]">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#C9A227]">
             {eyebrow}
           </p>
           <h3 className="font-display text-xl text-[#110069] sm:text-2xl">
@@ -154,15 +154,15 @@ export default function OurWork() {
     <>
       {/* ================= INTRO ================= */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-20">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Our Work
             </p>
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
               Success Snapshot
             </h1>
-            <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
+            <p className="mt-6 text-xl leading-relaxed text-[#181430]/65 sm:text-lg">
               Nearly a decade of scientific partnership — translated into
               impact.
             </p>
@@ -180,14 +180,14 @@ export default function OurWork() {
                 <div className="font-display text-3xl text-white sm:text-4xl">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-xs leading-snug text-white/60">
+                <div className="mt-2 text-xs leading-snug text-white/90">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-white/60">
+          <p className="mt-10 max-w-2xl text-lg leading-relaxed text-white/80">
             These numbers reflect not just volume — but sustained scientific
             contribution across clinical, academic, and pharmaceutical
             ecosystems.
@@ -202,13 +202,13 @@ export default function OurWork() {
               {THERAPY_AREAS.map((area) => (
                 <span
                   key={area}
-                  className="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/80"
+                  className="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2 text-base font-medium text-white/80"
                 >
                   {area}
                 </span>
               ))}
             </div>
-            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
               Our work spans the full spectrum of modern medicine — with
               contextual intelligence in each domain.
             </p>
@@ -231,19 +231,19 @@ export default function OurWork() {
               eyebrow="Signature Program"
               title="Medical Education for Diabetologists of India"
             >
-              <p className="text-sm leading-relaxed text-[#181430]/65">
+              <p className="text-base leading-relaxed text-[#181430]/95">
                 A comprehensive Type 1 Diabetes education initiative
                 designed for multi-stakeholder impact:
               </p>
               <ul className="mt-4 space-y-2.5">
                 {DIABETOLOGY_MODULES.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-[#181430]/70">
+                  <li key={item} className="flex gap-2.5 text-[15px] leading-relaxed text-[#181430]/90">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+              <p className="mt-5 text-base leading-relaxed text-[#181430]/85">
                 This program demonstrates our ability to build structured,
                 scalable, clinically relevant education ecosystems.
               </p>
@@ -255,10 +255,10 @@ export default function OurWork() {
               eyebrow="Signature Program"
               title="Thesis to Publication"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+              <p className="text-base font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
                 Closing a long-standing gap in academic publishing.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+              <p className="mt-3 text-sm leading-relaxed text-[#181430]/95">
                 Nearly{" "}
                 <span className="font-semibold text-[#110069]">75%</span> of
                 doctors never publish their postgraduate thesis work,
@@ -276,14 +276,14 @@ export default function OurWork() {
                       <p className="text-sm font-semibold text-[#110069]">
                         {title}
                       </p>
-                      <p className="mt-1 text-sm leading-relaxed text-[#181430]/65">
+                      <p className="mt-1 text-sm leading-relaxed text-[#181430]/95">
                         {body}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+              <p className="mt-5 text-base leading-relaxed text-[#181430]/85">
                 This program is a testimony that we act as a catalyst for
                 academic visibility and scientific continuity.
               </p>
@@ -296,7 +296,7 @@ export default function OurWork() {
                   <Database size={20} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#C9A227]">
+                  <p className="text-xs  font-semibold uppercase tracking-[0.16em] text-[#C9A227]">
                     Signature Program
                   </p>
                   <h3 className="font-display text-xl text-[#110069] sm:text-2xl">
@@ -304,11 +304,11 @@ export default function OurWork() {
                   </h3>
                 </div>
               </div>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
                 From dormant data to national influence — a six-stage
                 journey.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+              <p className="mt-3 text-base leading-relaxed text-[#181430]/65">
                 We guide institutions through a structured transformation:
               </p>
 
@@ -321,7 +321,7 @@ export default function OurWork() {
                     <span className="font-display text-2xl text-[#C9A227]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="mt-2 text-sm font-semibold leading-snug text-[#110069]">
+                    <p className="mt-2 text-base font-semibold leading-snug text-[#110069]">
                       {stage}
                     </p>
                   </div>
@@ -335,17 +335,17 @@ export default function OurWork() {
               eyebrow="Signature Program"
               title="Registry Creation & Quality Management"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
                 Turning collaboration into scientific intelligence.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+              <p className="mt-3 text-base leading-relaxed text-[#181430]/65">
                 We help doctors:
               </p>
               <div className="mt-4 flex flex-col gap-3">
                 {REGISTRY_POINTS.map(({ label, body }) => (
                   <div key={label} className="flex gap-3">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
-                    <p className="text-sm leading-relaxed text-[#181430]/70">
+                    <p className="text-[15px] leading-relaxed text-[#181430]/70">
                       <span className="font-semibold text-[#110069]">
                         {label}
                       </span>{" "}
@@ -354,7 +354,7 @@ export default function OurWork() {
                   </div>
                 ))}
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+              <p className="mt-5 text-base   leading-relaxed text-[#181430]/85">
                 Registries inform product portfolio design, new product
                 development strategy, and early trend detection — making
                 them invaluable for both clinicians and industry.
@@ -367,21 +367,21 @@ export default function OurWork() {
               eyebrow="Signature Program"
               title="Consensus Creation & Opinion Leadership"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#8a6c14]">
                 Evidence-aligned influence at national scale.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+              <p className="mt-3 text-base leading-relaxed text-[#181430]/65">
                 Our contributions include:
               </p>
               <ul className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {CONSENSUS_POINTS.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-[#181430]/70">
+                  <li key={item} className="flex gap-2.5 text-[15px] leading-relaxed text-[#181430]/90">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-sm leading-relaxed text-[#181430]/55">
+              <p className="mt-5 text-base leading-relaxed text-[#181430]/85">
                 This program demonstrates our ability to shape scientific
                 opinion responsibly and ethically.
               </p>
@@ -397,7 +397,7 @@ export default function OurWork() {
           <h2 className="mt-3 max-w-2xl font-display text-3xl text-[#110069] sm:text-4xl">
             Scientific work that shapes medical practice.
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#181430]/65">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#181430]/95">
             Medlish content has directly informed national medical practice
             guidance, including:
           </p>
@@ -409,7 +409,7 @@ export default function OurWork() {
                 className="flex gap-3 rounded-2xl border border-[#110069]/10 bg-[#FAF9F6] p-5"
               >
                 <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#C9A227]" />
-                <p className="text-sm leading-relaxed text-[#181430]/75">
+                <p className="text-base leading-relaxed text-[#181430]/95">
                   <span className="font-semibold text-[#110069]">{bold}</span>{" "}
                   {rest}
                 </p>
@@ -417,7 +417,7 @@ export default function OurWork() {
             ))}
           </div>
 
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-[#181430]/85">
             These contributions reflect our leadership-grade scientific
             integrity and real-world relevance.
           </p>
@@ -433,8 +433,8 @@ export default function OurWork() {
 
         <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2">
           <div className="rounded-2xl border border-[#110069]/10 bg-white p-6 sm:p-7">
-            <p className="text-sm leading-relaxed text-[#181430]/70">
-              <span className="font-semibold text-[#110069]">
+            <p className="text-[16px] leading-relaxed text-[#181430]/90">
+              <span className="font-bold text-[#110069]">
                 Scientific ideas
               </span>{" "}
               become publications — placed in PubMed, Google Scholar, and
@@ -443,8 +443,8 @@ export default function OurWork() {
             </p>
           </div>
           <div className="rounded-2xl border border-[#110069]/10 bg-white p-6 sm:p-7">
-            <p className="text-sm leading-relaxed text-[#181430]/70">
-              <span className="font-semibold text-[#110069]">
+            <p className="text-[16px] leading-relaxed text-[#181430]/90">
+              <span className="font-bold text-[#110069]">
                 Clinical observations & data
               </span>{" "}
               become analyzed, dashboarded, shareable, publishable — even
@@ -453,23 +453,23 @@ export default function OurWork() {
           </div>
         </div>
 
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-900">
           This section shows our ability to convert raw scientific material
           into structured, high-impact output.
         </p>
 
         <div className="mt-8 rounded-2xl bg-[#110069] p-6 sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
             Output Formats We Produce
           </p>
-          <p className="mt-2 text-sm text-white/60">
+          <p className="mt-2 text-base text-white/90">
             A complete spectrum of scientific communication.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             {OUTPUT_FORMATS.map((format) => (
               <span
                 key={format}
-                className="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85"
+                className="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2 text-base font-medium text-white/85"
               >
                 {format}
               </span>
@@ -484,7 +484,7 @@ export default function OurWork() {
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
             Your data, thesis, or idea could be next.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#181430]/65">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-gray-900">
             Tell us what you're sitting on — we'll help you see the
             publication, registry, or guideline hiding inside it.
           </p>

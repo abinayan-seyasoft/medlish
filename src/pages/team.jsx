@@ -86,7 +86,7 @@ function initials(name) {
 
 function SectionLabel({ children }) {
   return (
-    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+    <span className="text-2xl font-cursive font-black capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
       {children}
     </span>
   );
@@ -105,19 +105,19 @@ function LeadershipCard({ person }) {
             {name}
           </h3>
           {credentials && (
-            <p className="text-xs font-medium text-[#181430]/45">
+            <p className="text-sm font-medium text-[#181430]/85">
               {credentials}
             </p>
           )}
           <p className="mt-1 text-sm font-semibold text-[#C9A227]">{title}</p>
           {org && (
-            <p className="text-sm text-[#181430]/60">{org}</p>
+            <p className="text-sm text-[#181430]/90">{org}</p>
           )}
         </div>
       </div>
 
       {bio && (
-        <p className="mt-4 text-sm leading-relaxed text-[#181430]/65">
+        <p className="mt-4 text-[16px] leading-relaxed text-[#181430]">
           {bio}
         </p>
       )}
@@ -127,7 +127,7 @@ function LeadershipCard({ person }) {
           {email && (
             <a
               href={`mailto:${email}`}
-              className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
+              className="flex items-center gap-2 text-base text-[#181430]/90 transition-colors hover:text-[#110069]"
             >
               <Mail size={15} className="text-[#C9A227]" />
               {email}
@@ -136,7 +136,7 @@ function LeadershipCard({ person }) {
           {phone && (
             <a
               href={`tel:${phone.replace(/[^\d+]/g, "")}`}
-              className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
+              className="flex items-center gap-2 text-base text-[#181430]/90 transition-colors hover:text-[#110069]"
             >
               <Phone size={15} className="text-[#C9A227]" />
               {phone}
@@ -155,13 +155,13 @@ export default function Team() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Team
             </p>
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
               The people behind the science.
             </h1>
-            <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-[#181430]/85 sm:text-lg">
               Physicians, mentors, and scientific strategists — the
               leadership and network that make Medlish's work possible.
             </p>
@@ -203,13 +203,14 @@ export default function Team() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#110069]/10 font-display text-base text-[#110069]">
                   {initials(name)}
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-[#110069]">
+                <h3 className="mt-4 text-base font-bold text-[#110069]">
                   {name}
                 </h3>
-                <p className="mt-1 text-sm leading-relaxed text-[#181430]/65">
+                <p className="mt-1 text-[16px] leading-relaxed text-[#181430]/95">
                   {role}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-[#181430]/55">
+                <h4 className="mt-5 flex flex-col border-t border-[#110069]/10 pt-1"></h4>
+                <p className="mt-3 text-[16px] leading-relaxed text-[#181430]/85">
                   {bio}
                 </p>
               </div>
@@ -230,14 +231,14 @@ export default function Team() {
             {BROADER_NETWORK.map((item) => (
               <span
                 key={item}
-                className="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85"
+                className="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2 text-base font-semibold text-white/85"
               >
                 {item}
               </span>
             ))}
           </div>
 
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/60">
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
             Our extended network includes certified medical writers, global
             publication consultants, clinical researchers, statisticians,
             and scientific specialists, enabling Medlish to deliver
@@ -252,7 +253,7 @@ export default function Team() {
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
             Want to work with our team?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#181430]/65">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-gray-900">
             Reach out directly to our leadership, or tell us about your
             project and we'll route it to the right person.
           </p>

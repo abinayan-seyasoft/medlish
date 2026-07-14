@@ -102,7 +102,8 @@ const POSTS = [
 
 function SectionLabel({ children }) {
   return (
-    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+    <span className="text-md font-extrabold capitalize italic leading-snug text-[#110069] tracking-[0.2em]
+">
       {children}
     </span>
   );
@@ -124,13 +125,13 @@ export default function Insights() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Insights
             </p>
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
               Notes from the work.
             </h1>
-            <p className="mt-6 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-[#181430]/95 sm:text-lg">
               Guideline summaries, event recaps, and success stories drawn
               from our ongoing scientific partnerships.
             </p>
@@ -185,10 +186,10 @@ export default function Insights() {
                 <h3 className="mt-4 font-display text-lg leading-snug text-[#110069] sm:text-xl">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#181430]/65">
+                <p className="mt-3 text-base leading-relaxed text-[#181430]">
                   {excerpt}
                 </p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#181430]/55">
+                <p className="mt-3 flex-1 text-base leading-relaxed text-[#181430]/95">
                   {insight}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#110069]">
@@ -214,9 +215,9 @@ export default function Insights() {
       <section className="bg-[#110069]">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20 lg:px-10">
           <h2 className="font-display text-3xl text-white sm:text-4xl">
-            Have a guideline, event, or story worth sharing?
+            Have a guideline, event, or story ?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/65">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/95">
             If you'd like to contribute a recap or success story to
             Insights, reach out to our team.
           </p>

@@ -46,7 +46,7 @@ const CLOSING_QUOTES = [
   },
   {
     text: "Content is king. Context is God.",
-    author: null,
+    author: "Medlish Communicators",
   },
 ];
 
@@ -61,7 +61,7 @@ const initialForm = {
 
 function SectionLabel({ children }) {
   return (
-    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+    <span className="text-2xl font-cursive font-black capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
       {children}
     </span>
   );
@@ -85,7 +85,7 @@ function Field({ label, children, htmlFor }) {
     <div>
       <label
         htmlFor={htmlFor}
-        className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#181430]/50"
+        className="mb-1.5 block text-[13px] font-extrabold uppercase tracking-[0.1em] text-[#181430]/90"
       >
         {label}
       </label>
@@ -123,7 +123,7 @@ export default function Contact() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Contact
             </p>
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
@@ -222,10 +222,10 @@ export default function Contact() {
                             type="button"
                             onClick={() => toggleInterest(option)}
                             aria-pressed={active}
-                            className={`rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${
+                            className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                               active
                                 ? "border-[#110069] bg-[#110069] text-white"
-                                : "border-[#110069]/15 bg-white text-[#181430]/65 hover:border-[#110069]/40"
+                                : "border-[#110069]/15 bg-white text-[#181430]/85 hover:border-[#110069]/40"
                             }`}
                           >
                             {option}
@@ -280,10 +280,10 @@ export default function Contact() {
                         <h3 className="text-base font-semibold text-[#110069]">
                           {name}
                         </h3>
-                        <p className="text-xs text-[#181430]/45">
+                        <p className="text-sm text-[#181430]/95">
                           {credentials}
                         </p>
-                        <p className="mt-1 text-sm font-medium text-[#C9A227]">
+                        <p className="mt-1 text-base font-medium text-[#C9A227]">
                           {title}
                         </p>
                       </div>
@@ -293,7 +293,7 @@ export default function Contact() {
                         {email && (
                           <a
                             href={`mailto:${email}`}
-                            className="flex items-center gap-2 text-sm text-[#181430]/70 transition-colors hover:text-[#110069]"
+                            className="flex items-center gap-2 text-base text-[#181430]/70 transition-colors hover:text-[#110069]"
                           >
                             <Mail size={15} className="text-[#C9A227]" />
                             {email}
@@ -324,12 +324,6 @@ export default function Contact() {
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
             {CLOSING_QUOTES.map(({ text, author }) => (
               <div key={text} className="text-center sm:text-left">
-                <Quote
-                  size={28}
-                  className="mx-auto text-[#C9A227] sm:mx-0"
-                  fill="currentColor"
-                  strokeWidth={0}
-                />
                 <p className="mt-4 font-display text-xl italic leading-snug text-white sm:text-2xl">
                   "{text}"
                 </p>

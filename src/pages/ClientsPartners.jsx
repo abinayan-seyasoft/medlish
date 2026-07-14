@@ -74,7 +74,7 @@ const JOURNALS = [
 
 function SectionLabel({ children }) {
   return (
-    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+    <span className=" text-2xl font-cursive font-black capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
       {children}
     </span>
   );
@@ -87,7 +87,7 @@ function LogoChip({ name, tone = "light" }) {
       : "border-[#110069]/15 bg-white text-[#110069]/70";
   return (
     <span
-      className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium sm:px-5 ${toneClasses}`}
+      className={`whitespace-nowrap rounded-full border px-4 py-2 text-base font-bold sm:px-5 ${toneClasses}`}
     >
       {name}
     </span>
@@ -103,7 +103,7 @@ function AssociateList({ icon: Icon, items }) {
           className="flex gap-3 rounded-xl border border-[#110069]/10 bg-[#FAF9F6] p-4"
         >
           <Icon size={18} className="mt-0.5 shrink-0 text-[#C9A227]" />
-          <span className="text-sm leading-relaxed text-[#181430]/75">
+          <span className="text-base leading-relaxed font-semibold text-[#181430]/95">
             {item}
           </span>
         </li>
@@ -119,7 +119,7 @@ export default function ClientsPartners() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Clients & Partners
             </p>
             <h1 className="font-display text-4xl leading-[1.1] text-[#110069] sm:text-5xl lg:text-6xl">
@@ -146,7 +146,7 @@ export default function ClientsPartners() {
               <LogoChip key={name} name={name} />
             ))}
           </div>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-900">
             These partnerships reflect our ability to work with teams that
             demand scientific rigor, ethical clarity, and context-aware
             communication, across therapy areas, product lifecycles, and
@@ -163,7 +163,7 @@ export default function ClientsPartners() {
                 <LogoChip key={name} name={name} />
               ))}
             </div>
-            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-900">
               Our publication collaborations demonstrate credibility with
               global scientific publishers, ensuring your work is
               positioned with precision and integrity.
@@ -182,7 +182,7 @@ export default function ClientsPartners() {
           <div className="mt-10">
             <AssociateList icon={Landmark} items={ACADEMIC_ASSOCIATES} />
           </div>
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+          <p className="mt-8 max-w-2xl text-medium leading-relaxed text-gray-900">
             These associations reflect our commitment to scientific ethics,
             evidence-aligned thinking, and real-world relevance — across
             cardiology, endocrinology, metabolic health, and scientific
@@ -201,7 +201,7 @@ export default function ClientsPartners() {
           <div className="mt-10">
             <AssociateList icon={GraduationCap} items={UNIVERSITY_COLLABORATIONS} />
           </div>
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#181430]/55">
+          <p className="mt-8 max-w-2xl text-medium leading-relaxed text-gray-900">
             Our collaborations span clinical research, translational
             science, data science, and academic publishing, enabling
             multi-institutional scientific output with global relevance.
@@ -213,7 +213,7 @@ export default function ClientsPartners() {
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-gradient-to-r from-[#110069] to-[#241394] p-8 sm:flex-row sm:items-center sm:p-10">
           <div>
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
               <Award size={16} />
               Featured Partnership
             </span>
@@ -223,7 +223,7 @@ export default function ClientsPartners() {
               connecting our scientific content network to one of the
               leading global diabetes education and research academies.
             </p>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/70">
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-white/90">
               This partnership reflects our commitment to shaping diabetes
               education, evidence dissemination, and clinician-ready
               scientific communication at scale.
@@ -242,7 +242,7 @@ export default function ClientsPartners() {
       {/* ================= JOURNALS ================= */}
       <section className="bg-[#110069]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
             <BookOpen size={16} />
             Journals We've Published In
           </span>
@@ -254,7 +254,7 @@ export default function ClientsPartners() {
               <LogoChip key={journal} name={journal} tone="dark" />
             ))}
           </div>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80">
             Our publication footprint spans high-impact clinical, endocrine,
             cardiology, metabolic, and general medicine journals —
             demonstrating scientific credibility across specialties.
@@ -268,7 +268,7 @@ export default function ClientsPartners() {
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
             Become Part of the Network.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#181430]/65">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-gray-900">
             Whether you're a pharma team, a publisher, or a research
             institution — let's explore what a partnership could look like.
           </p>

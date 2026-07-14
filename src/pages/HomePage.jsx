@@ -104,13 +104,13 @@ export default function MedlishHome() {
     <>
       {/* ================= HERO ================= */}
       <section id="top" className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-4 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-5 py-10 sm:px-8 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-4 lg:px-10 lg:pt-20">
           {/* Text column */}
           <div className="relative">
             {/* Signature rotated gold rule */}
             <div className="pointer-events-none absolute -left-6 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-[#C9A227] to-transparent sm:block lg:-left-10" />
 
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               Medlish Communications
             </p>
 
@@ -119,7 +119,7 @@ export default function MedlishHome() {
               Brands
             </h1>
 
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#181430]/70">
+            <p className="mt-6 max-w-lg text-xl leading-relaxed text-gray-900">
               Clear. Credible. Context-aware scientific communication shaped
               by deep expertise.
             </p>
@@ -151,7 +151,7 @@ export default function MedlishHome() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0140] via-[#0a0140]/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-8 text-white">
-              <span className="font-display text-4xl">1,000+</span>
+              <span className="font-display text-4xl">10,000+</span>
               <span className="text-sm text-white/70">
                 Published research works, and counting
               </span>
@@ -160,11 +160,7 @@ export default function MedlishHome() {
             <div className="absolute left-6 top-10 h-2 w-24 rounded-full bg-[#C9A227]/70" />
           </div>
         </div>
-      </section>
-
-      {/* ================= SUBHERO ================= */}
-      <section className="border-y border-[#110069]/10 bg-white">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-5 py-12 text-center sm:px-8 sm:py-16">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-5 py-1 text-center sm:px-8 sm:py-6">
           <span className="h-px w-16 bg-[#C9A227]" />
           <p className="font-display text-xl italic leading-snug text-[#110069] sm:text-2xl">
             Scientific communication that understands your product, your
@@ -177,7 +173,7 @@ export default function MedlishHome() {
       {/* ================= OPENING STATEMENT ================= */}
       <section className="bg-white">
         <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+          <span className="text-2xl font-cursive font-black capitalize italic leading-snug text-[#110069] tracking-[0.2em] ">
             Hi, This Is Medlish
           </span>
 
@@ -191,15 +187,15 @@ export default function MedlishHome() {
 
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              "You don't need to explain your science twice.",
-              "You don't need long onboarding.",
+              "You don't need to explain your science twice !",
+              "You don't need long onboarding !",
               'And you certainly don\u2019t need to strain or labor to make someone "get it."',
             ].map((line) => (
               <div
                 key={line}
                 className="rounded-2xl border border-[#110069]/10 bg-[#FAF9F6] p-5"
               >
-                <p className="text-sm font-medium leading-relaxed text-[#181430]/80">
+                <p className="text-base font-medium leading-relaxed text-gray-900">
                   {line}
                 </p>
               </div>
@@ -207,25 +203,19 @@ export default function MedlishHome() {
           </div>
 
           <div className="mt-10 flex flex-col gap-5">
-            <p className="text-base leading-relaxed text-[#181430]/65">
+            <p className="text-lg leading-relaxed text-gray-900">
               We already speak your world — clinical practice, research,
               regulatory pathways, medical affairs, and the publication
               insights that influence real decisions in healthcare.
             </p>
-            <p className="text-base leading-relaxed text-[#181430]/65">
+            <p className="text-lg leading-relaxed text-gray-900">
               We combine that expertise with empathy, curiosity, and a
               commitment to understanding why your message matters and who
               it must influence.
             </p>
           </div>
 
-          <div className="relative mt-10 rounded-2xl bg-[#110069] p-6 pl-14 sm:p-8 sm:pl-16">
-            <Quote
-              size={28}
-              className="absolute left-5 top-6 text-[#C9A227] sm:left-6 sm:top-7"
-              fill="currentColor"
-              strokeWidth={0}
-            />
+          <div className=" mt-10 rounded-2xl bg-[#110069] p-4  sm:p-8">
             <p className="font-display text-lg italic leading-snug text-white sm:text-xl">
               The result is communication that is scientifically rigorous,
               strategically aligned, and contextually intelligent — crafted
@@ -245,13 +235,13 @@ export default function MedlishHome() {
       <section id="big-idea" className="border-y border-[#110069]/10 bg-[#FAF9F6]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+            <span className="text-2xl font-cursive font-black capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
               Our Big Idea
             </span>
             <h2 className="mt-3 font-display text-3xl text-[#110069] sm:text-4xl">
               First, we set the context right.
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-[#181430]/65">
+            <p className="mt-5 text-lg leading-relaxed text-gray-900">
               In science, content fails to deliver when it is created
               without a thorough understanding of the context — and the
               nuances of where, how, and to whom it must be conveyed.
@@ -274,7 +264,7 @@ export default function MedlishHome() {
                 <h3 className="mt-3 text-base font-semibold leading-snug text-[#110069]">
                   {title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#181430]/65">
+                <p className="mt-2 text-medium leading-relaxed text-gray-900">
                   {body}
                 </p>
               </div>

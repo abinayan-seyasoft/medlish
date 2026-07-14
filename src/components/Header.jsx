@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[#110069]/10 bg-[#FAF9F6]/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
         <Link to="/" className="flex items-baseline gap-2">
-          <img src={logo} alt="Medlish Communications logo" className="h-16 w-[180px] object-contain" />
+          <img src={logo} alt="Medlish Communications logo" className="h-18 w-[210px] object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

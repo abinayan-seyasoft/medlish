@@ -14,11 +14,11 @@ const PHILOSOPHY = [
   },
   {
     title: "Contextual Intelligence",
-    body: "We study the clinical, cultural, and market environment surrounding every problem. We understand the forces shaping decisions, the constraints teams operate under, and the audiences who must be influenced. This is how we ensure relevance, not just accuracy.",
+    body: "We study the clinical, cultural, and market environment surrounding every problem. We understand the forces shaping decisions, the constraints teams operate under, and the audiences who must internalize your science and concepts. This is how we ensure relevance, not only accuracy.",
   },
   {
     title: "Deep Domain Expertise",
-    body: "Our team brings decades of pharmaceutical medicine practice, clinical experience, translational research, regulatory understanding, and medical affairs leadership. This is not just expertise — it is perspective.",
+    body: "Our team brings decades of pharmaceutical medicine practice, clinical experience, translational research, regulatory understanding, and medical affairs leadership. This is beyond expertise — it is perspective.",
   },
   {
     title: "Scientific Ethics & Integrity",
@@ -101,31 +101,19 @@ function QuoteCard({ text, author, tone = "dark" }) {
   if (tone === "light") {
     return (
       <div className="relative rounded-2xl border border-[#110069]/10 bg-[#FAF9F6] p-6 pl-14 sm:p-8 sm:pl-16">
-        <Quote
-          size={26}
-          className="absolute left-5 top-6 text-[#C9A227] sm:left-6 sm:top-7"
-          fill="currentColor"
-          strokeWidth={0}
-        />
         <p className="font-display text-lg italic leading-snug text-[#110069] sm:text-xl">
           "{text}"
         </p>
-        <p className="mt-4 text-sm font-medium text-[#8a6c14]">— {author}</p>
+        <p className="mt-4 text-sm font-md text-[#8a6c14]">— {author}</p>
       </div>
     );
   }
   return (
     <div className="relative rounded-2xl bg-[#110069] p-6 pl-14 text-white sm:p-8 sm:pl-16">
-      <Quote
-        size={26}
-        className="absolute left-5 top-6 text-[#C9A227] sm:left-6 sm:top-7"
-        fill="currentColor"
-        strokeWidth={0}
-      />
       <p className="font-display text-lg italic leading-snug sm:text-xl">
         "{text}"
       </p>
-      <p className="mt-4 text-sm font-medium text-[#C9A227]">— {author}</p>
+      <p className="mt-4 text-sm font-semibold text-[#C9A227]">— {author}</p>
     </div>
   );
 }
@@ -137,7 +125,7 @@ export default function AboutUs() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8a6c14]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-[16px] font-extrabold uppercase tracking-[0.18em] text-[#110069]">
               About Us
             </p>
 
@@ -145,7 +133,7 @@ export default function AboutUs() {
               Built on a simple truth.
             </h1>
 
-            <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-[#181430]/65 sm:text-lg">
+            <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-gray-900 sm:text-lg">
               <p>
                 Medlish Communications was built on a simple truth:
                 scientific content only creates impact when it is shaped
@@ -174,13 +162,13 @@ export default function AboutUs() {
       <section className="border-y border-[#110069]/10 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+            <span className="text-2xl font-cursive font-extrabold capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
               Our Philosophy
             </span>
             <h2 className="mt-3 font-display text-3xl text-[#110069] sm:text-4xl">
               Four qualities we consider non-negotiable.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-[#181430]/65">
+            <p className="mt-4 text-lg leading-relaxed text-gray-900">
               These principles guide our thinking and define how we approach
               every scientific challenge — the internal compass behind our
               work.
@@ -199,7 +187,7 @@ export default function AboutUs() {
                 <h3 className="mt-3 text-base font-semibold leading-snug text-[#110069]">
                   {title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#181430]/65">
+                <p className="mt-2 text-base leading-relaxed text-gray-900">
                   {body}
                 </p>
               </div>
@@ -218,13 +206,13 @@ export default function AboutUs() {
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+            <span className=" text-2xl font-cursive font-extrabold capitalize italic leading-snug text-[#110069] tracking-[0.2em]">
               Why Medlish Is Different
             </span>
             <h2 className="mt-3 font-display text-3xl text-[#110069] sm:text-4xl">
               We enable science — we don't market it.
             </h2>
-            <div className="mt-5 flex flex-col gap-4 text-base leading-relaxed text-[#181430]/65">
+            <div className="mt-5 flex flex-col gap-4 text-lg leading-relaxed text-gray-900">
               <p>
                 We neither market science, nor do we have any marketing
                 businesses. We bring experience without agenda. We are{" "}
@@ -258,7 +246,7 @@ export default function AboutUs() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="flex items-center gap-2">
             <Sparkles size={18} className="text-[#C9A227]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#C9A227]">
               Our Growth — Bandwidth in Science
             </span>
           </div>
@@ -288,7 +276,7 @@ export default function AboutUs() {
                         isEven ? "lg:order-1 lg:mr-auto lg:w-full" : "lg:order-2 lg:ml-auto lg:w-full"
                       }`}
                     >
-                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
+                      <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
                         {range}
                       </span>
                       <h3 className="mt-1 font-display text-xl text-white sm:text-2xl">
@@ -298,7 +286,7 @@ export default function AboutUs() {
                         {points.map((point) => (
                           <li
                             key={point}
-                            className="flex gap-2.5 text-sm leading-relaxed text-white/70"
+                            className="flex gap-2.5 text-ms leading-relaxed text-white/95"
                           >
                             <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#C9A227]" />
                             {point}
@@ -332,7 +320,7 @@ export default function AboutUs() {
           <h2 className="font-display text-3xl text-[#110069] sm:text-4xl">
             Built on expertise. Guided by ethics. Driven by context.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#181430]/65">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-gray-900">
             If that's the kind of scientific partner you're looking for,
             we'd love to hear about your project.
           </p>
