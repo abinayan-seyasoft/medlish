@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Mail, Phone, Send, CheckCircle2, Quote } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 /**
  * Medlish Communications — Contact Page
@@ -67,6 +68,10 @@ function SectionLabel({ children }) {
   );
 }
 
+const EMAILJS_SERVICE_ID = "service_mzqdkfv";
+const EMAILJS_TEMPLATE_ID = "template_qdd4bmd";
+const EMAILJS_PUBLIC_KEY = "UP9nPwUUt_uIEbs1z";
+
 function initials(name) {
   return name
     .split(" ")
@@ -96,25 +101,42 @@ function Field({ label, children, htmlFor }) {
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState("idle"); // idle | submitting | success
-
+  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
+ 
   const update = (key) => (e) =>
     setForm((f) => ({ ...f, [key]: e.target.value }));
-
+ 
   const toggleInterest = (option) =>
     setForm((f) => ({
       ...f,
       interest: f.interest === option ? "" : option,
     }));
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("submitting");
-    // TODO: replace with a real submission (API route, EmailJS, Formspree, etc.)
-    setTimeout(() => {
-      setStatus("success");
-      setForm(initialForm);
-    }, 900);
+ 
+    const templateParams = {
+      from_name: form.name,
+      organization: form.organization,
+      from_email: form.email,
+      phone: form.phone,
+      interest: form.interest,
+      message: form.message,
+    };
+ 
+    emailjs
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      })
+      .then(() => {
+        setStatus("success");
+        setForm(initialForm);
+      })
+      .catch((err) => {
+        console.error("EmailJS send failed:", err);
+        setStatus("error");
+      });
   };
 
   return (

@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/service" },
   { label: "Our Work", to: "/ourwork" },
+  { label: "Gallery", to: "/gallery" },
   { label: "Clients & Partners", to: "/clientspartners" },
   { label: "Team", to: "/team" },
   { label: "Insights", to: "/insight" },
@@ -67,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/70">
-          © Medlish Communications. All rights reserved.
+          © Medlish Communications. ® All rights reserved.
         </div>
       </div>
     </footer>
