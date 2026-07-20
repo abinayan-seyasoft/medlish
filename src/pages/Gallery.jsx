@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { X, ChevronLeft, ChevronRight, ArrowRight, Image as ImageIcon, ImageOff } from "lucide-react";
 
 
-const PHOTO_COUNT = 53;
+const PHOTO_COUNT = 71;
 const EXT = "jpeg";
 
 const GALLERY_PHOTOS = Array.from({ length: PHOTO_COUNT }, (_, i) => {
